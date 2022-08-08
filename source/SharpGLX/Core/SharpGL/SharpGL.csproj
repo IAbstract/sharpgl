@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGL</PackageId>
+        <Copyright>Copyright (c) Dave Kerr 2020</Copyright>
+        <PackageProjectUrl>https://github.com/dwmkerr/sharpgl</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dwmkerr/sharpgl</RepositoryUrl>
+        <Version>3.1.1.0</Version>
+        <Authors>Dave Kerr</Authors>
+        <Company>Dave Kerr</Company>
+        <PackageTags>SharpGL;OpenGL</PackageTags>
+        <Description>
+            SharpGL is the core library for SharpGL.
+            It provides wrappers for all OpenGL functions.
+        </Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RunCodeAnalysis>false</RunCodeAnalysis>
+        <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DocumentationFile>bin\Release\SharpGL.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>SharpGL.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="Tesselators\Delegates.cs" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>library</OutputType>
+        <UseWpf>true</UseWpf>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGL.WPF</PackageId>
+        <Copyright>Copyright (c) Dave Kerr 2020</Copyright>
+        <PackageProjectUrl>https://github.com/dwmkerr/sharpgl</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dwmkerr/sharpgl</RepositoryUrl>
+        <Version>3.1.1.0</Version>
+        <Authors>Dave Kerr</Authors>
+        <Company>Dave Kerr</Company>
+        <PackageTags>SharpGL;WPF;OpenGL</PackageTags>
+        <Description>
+            SharpGL.WinForms contains controls to use OpenGL in WPF applications.
+        </Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DocumentationFile>bin\Release\SharpGL.WPF.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>SharpGL.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Apex">
+            <HintPath>..\..\Dependencies\Apex.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Resources\Light_16x16.png" />
+        <Resource Include="Resources\Star_16x16.png" />
+        <Resource Include="Resources\Folder_16x16.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SharpGL.SceneGraph\SharpGL.SceneGraph.csproj" />
+        <ProjectReference Include="..\SharpGL\SharpGL.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'netcoreapp3.0'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'netcoreapp3.1'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net45'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net472'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'netcoreapp3.0'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'netcoreapp3.1'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'net45'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'net472'" />
+    </ItemGroup>
+</Project>

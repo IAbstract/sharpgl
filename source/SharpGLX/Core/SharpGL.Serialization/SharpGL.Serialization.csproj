@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGL.Serialization</PackageId>
+        <Copyright>Copyright (c) Dave Kerr 2020</Copyright>
+        <PackageProjectUrl>https://github.com/dwmkerr/sharpgl</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dwmkerr/sharpgl</RepositoryUrl>
+        <Version>3.1.1.0</Version>
+        <Authors>Dave Kerr</Authors>
+        <Company>Dave Kerr</Company>
+        <PackageTags>SharpGL;Serialization;OpenGL</PackageTags>
+        <Description>
+            SharpGL.Serialization contains utlities to load data from common file formats, such as Caligari, Discreet and Wavefront.
+        </Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DocumentationFile>bin\Release\SharpGL.Serialization.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>SharpGL.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SharpGL.SceneGraph\SharpGL.SceneGraph.csproj" />
+        <ProjectReference Include="..\SharpGL\SharpGL.csproj" />
+    </ItemGroup>
+    <PropertyGroup />
+</Project>

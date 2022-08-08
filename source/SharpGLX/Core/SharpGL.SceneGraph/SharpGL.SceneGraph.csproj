@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGL.SceneGraph</PackageId>
+        <Copyright>Copyright (c) Dave Kerr 2020</Copyright>
+        <PackageProjectUrl>https://github.com/dwmkerr/sharpgl</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dwmkerr/sharpgl</RepositoryUrl>
+        <Version>3.1.1.0</Version>
+        <Authors>Dave Kerr</Authors>
+        <Company>Dave Kerr</Company>
+        <PackageTags>SharpGL;SceneGraph;OpenGL</PackageTags>
+        <Description>
+            SharpGL.SceneGraph contains representations of key 3D scene elements, such as lights, materials and polygons.
+        </Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DocumentationFile>bin\Release\SharpGL.SceneGraph.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>SharpGL.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SharpGL\SharpGL.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <PackageReference Include="System.Drawing.Common">
+            <Version>4.7.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+        <PackageReference Include="System.Drawing.Common">
+            <Version>4.7.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+        <PackageReference Include="System.Drawing.Common">
+            <Version>4.7.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        <PackageReference Include="System.Drawing.Common">
+            <Version>4.7.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <PropertyGroup>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+</Project>

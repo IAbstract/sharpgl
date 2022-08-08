@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <UseWindowsForms>true</UseWindowsForms>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGL.WinForms</PackageId>
+        <Copyright>Copyright (c) Dave Kerr 2020</Copyright>
+        <PackageProjectUrl>https://github.com/dwmkerr/sharpgl</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dwmkerr/sharpgl</RepositoryUrl>
+        <Version>3.1.1.0</Version>
+        <Authors>Dave Kerr</Authors>
+        <Company>Dave Kerr</Company>
+        <PackageTags>SharpGL;WinForms;OpenGL</PackageTags>
+        <Description>
+            SharpGL.WinForms contains controls to use OpenGL in WinForms applications.
+        </Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DocumentationFile>bin\Release\SharpGL.WinForms.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>SharpGL.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Update="GLColourPicker.cs" />
+        <Compile Update="OpenGLControl.cs" />
+        <Compile Update="OpenGLControl.Designer.cs">
+            <DependentUpon>OpenGLControl.cs</DependentUpon>
+        </Compile>
+        <Compile Update="SceneControl.cs" />
+        <Compile Update="VertexControl.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="GLColourPicker.resx">
+            <DependentUpon>GLColourPicker.cs</DependentUpon>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <EmbeddedResource Update="OpenGLControl.resx">
+            <DependentUpon>OpenGLControl.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Update="SceneControl.resx">
+            <DependentUpon>SceneControl.cs</DependentUpon>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <EmbeddedResource Update="VertexControl.resx">
+            <DependentUpon>VertexControl.cs</DependentUpon>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="SharpGL.ico" />
+        <Content Include="SharpGL.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SharpGL.SceneGraph\SharpGL.SceneGraph.csproj" />
+        <ProjectReference Include="..\SharpGL\SharpGL.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System.Design" Condition="'$(TargetFramework)' == 'net40'" />
+        <Reference Include="System.Design" Condition="'$(TargetFramework)' == 'net45'" />
+        <Reference Include="System.Design" Condition="'$(TargetFramework)' == 'net472'" />
+        <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)' == 'net40'" />
+        <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)' == 'net45'" />
+        <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)' == 'net472'" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'netcoreapp3.0'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'netcoreapp3.1'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net45'" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net472'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'netcoreapp3.0'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'netcoreapp3.1'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'net45'" />
+        <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" Condition="'$(TargetFramework)' == 'net472'" />
+    </ItemGroup>
+</Project>
