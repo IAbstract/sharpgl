@@ -21,6 +21,7 @@ obj/
 _ReSharper*/
 *.sdf
 *.opensdf
+logs*/
 
 # We don't want to ignore the main release folder scripts.
 .vs

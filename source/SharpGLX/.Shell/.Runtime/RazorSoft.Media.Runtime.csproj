@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <RootNamespace>RazorSoft.Media.Framework</RootNamespace>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion>10.0.0</FileVersion>
+    <PackageReleaseNotes>alpha</PackageReleaseNotes>
+    <Copyright>2022 RazorSoft Media, LLC</Copyright>
+    <Product>$(AssemblyName).Framework</Product>
+    <Authors>David Boarman</Authors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Company>RazorSoft Media, LLC</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Core\RuntimeBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RazorSoft.Core" Version="2.0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\.Runtime.Domain\RazorSoft.Media.Runtime.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\AssemblyInfo.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
