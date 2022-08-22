@@ -13,12 +13,11 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("RazorSoft.Media.Framework")]
 
-[assembly: AssemblyCompanyAttribute("RazorSoft Media, LLC")]
-[assembly: AssemblyConfigurationAttribute("Debug")]
-[assembly: AssemblyCopyrightAttribute("2022 RazorSoft Media, LLC")]
-[assembly: AssemblyFileVersionAttribute("10.0.0")]
-[assembly: AssemblyProductAttribute("RazorSoft.Media.Runtime")]
-[assembly: AssemblyTitleAttribute("RazorSoft.Media")]
+[assembly: AssemblyCompany("RazorSoft Media, LLC")]
+[assembly: AssemblyConfiguration("Debug")]
+[assembly: AssemblyCopyright("2022 RazorSoft Media, LLC")]
+[assembly: AssemblyProduct("RazorSoft.Media.Runtime")]
+[assembly: AssemblyTitle("RazorSoft.Media")]
 
 /*
     Version schema:
@@ -27,11 +26,16 @@ using System.Runtime.CompilerServices;
         Revision                -   Increment at the start of sprint, feature, project, etc.
         DaysSinceRevision       -   Number of days since Revision was officially incremented
 * ***/
-[assembly: AssemblyVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.DaysSinceRevision #>")]
 
 //  this is for the NuGet package ...???
-#if !DEBUG
-[assembly: AssemblyInformationalVersionAttribute("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision == 0 ? this.DaysSinceRevision : this.Revision * this.DaysSinceRevision #>.<#= this.DaysSinceRelease #>")]
+#if DEBUG
+    [assembly: AssemblyFileVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.DaysSinceRevision #>")]
+    [assembly: AssemblyVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.DaysSinceRevision #>")]
+#elif !DEBUG
+    [assembly: AssemblyFileVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision == 0 ? this.DaysSinceRevision : this.Revision * this.DaysSinceRevision #>.<#= this.DaysSinceRelease #>")]
+    [assembly: AssemblyVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision == 0 ? this.DaysSinceRevision : this.Revision * this.DaysSinceRevision #>.<#= this.DaysSinceRelease #>")]
+    [assembly: AssemblyInformationalVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision == 0 ? this.DaysSinceRevision : this.Revision * this.DaysSinceRevision #>.<#= this.DaysSinceRelease #>")]
+    [assembly: ObfuscateAssembly(false)]
 #endif
 
 <#+

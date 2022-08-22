@@ -15,7 +15,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCompanyAttribute("RazorSoft Media, LLC")]
 [assembly: AssemblyConfigurationAttribute("Debug")]
 [assembly: AssemblyCopyrightAttribute("2022 RazorSoft Media, LLC")]
-[assembly: AssemblyFileVersionAttribute("10.0.0")]
 [assembly: AssemblyProductAttribute("RazorSoft.Media.Runtime.Domain")]
 [assembly: AssemblyTitleAttribute("RazorSoft.Media")]
 
@@ -26,10 +25,15 @@ using System.Runtime.CompilerServices;
         Revision                -   Increment at the start of sprint, feature, project, etc.
         DaysSinceRevision       -   Number of days since Revision was officially incremented
 * ***/
-[assembly: AssemblyVersion("0.0.1.5")]
 
 //  this is for the NuGet package ...???
-#if !DEBUG
-[assembly: AssemblyInformationalVersionAttribute("0.0.5.41")]
+#if DEBUG
+    [assembly: AssemblyFileVersion("0.0.1.53")]
+    [assembly: AssemblyVersion("0.0.1.53")]
+#elif !DEBUG
+    [assembly: AssemblyFileVersion("0.0.53.89")]
+    [assembly: AssemblyVersion("0.0.53.89")]
+    [assembly: AssemblyInformationalVersion("0.0.53.89")]
+    [assembly: ObfuscateAssembly(false)]
 #endif
 

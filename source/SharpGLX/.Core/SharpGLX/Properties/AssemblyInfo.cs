@@ -9,13 +9,12 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 
 
-[assembly: InternalsVisibleTo("RazorSoft.Media.Framework")]
+[assembly: InternalsVisibleTo("SharpGLX.Windows")]
 
-[assembly: AssemblyCompany("RazorSoft Media, LLC")]
-[assembly: AssemblyConfiguration("Debug")]
-[assembly: AssemblyCopyright("2022 RazorSoft Media, LLC")]
-[assembly: AssemblyProduct("RazorSoft.Media.Runtime")]
-[assembly: AssemblyTitle("RazorSoft.Media")]
+//[assembly: AssemblyCompany("RazorSoft Media, LLC")]
+//[assembly: AssemblyCopyright("2022 RazorSoft Media, LLC")]
+[assembly: AssemblyProduct("SharpGLX")]
+[assembly: AssemblyTitle("SharpGLX")]
 
 /*
     Version schema:
@@ -27,12 +26,12 @@ using System.Runtime.CompilerServices;
 
 //  this is for the NuGet package ...???
 #if DEBUG
-    [assembly: AssemblyFileVersion("0.3.0.34")]
-    [assembly: AssemblyVersion("0.3.0.34")]
+    [assembly: AssemblyFileVersion("0.1.0.11")]
+    [assembly: AssemblyVersion("0.1.0.11")]
 #elif !DEBUG
-    [assembly: AssemblyFileVersion("0.3.34.48")]
-    [assembly: AssemblyVersion("0.3.34.48")]
-    [assembly: AssemblyInformationalVersion("0.3.34.48")]
+    [assembly: AssemblyFileVersion("0.1.11.3")]
+    [assembly: AssemblyVersion("0.1.11.3")]
+    [assembly: AssemblyInformationalVersion("0.1.11.3")]
     [assembly: ObfuscateAssembly(false)]
 #endif
 

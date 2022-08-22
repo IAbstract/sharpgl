@@ -1,39 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>disable</Nullable>
-        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-        <RootNamespace>RazorSoft.Media.Framework</RootNamespace>
-        <PackageReleaseNotes>alpha</PackageReleaseNotes>
-        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+        <OutputType>Library</OutputType>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <!-- The following properies are used to manage how the project is packaged. -->
+        <PackageId>SharpGLX</PackageId>
+        <Copyright>Copyright (c) 2020 Dave Kerr; 2022 David Boarman</Copyright>
+        <Authors>Dave Kerr; David Boarman</Authors>
+        <PackageTags>SharpGL;SharpGLX;OpenGL</PackageTags>
+        <Description>
+            SharpGLX is the core library for SharpGL Cross Platform.
+            Updates original SharpGL providing wrappers for all OpenGL functions.
+        </Description>
     </PropertyGroup>
-
+    
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RunCodeAnalysis>false</RunCodeAnalysis>
+        <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DocumentationFile>bin\Release\SharpGLX.xml</DocumentationFile>
+    </PropertyGroup>
+    
     <ItemGroup>
-        <Compile Remove="Core\RuntimeBuilder.cs" />
+        <Compile Remove="Tesselators\Delegates.cs" />
     </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="RazorSoft.Core" Version="3.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\.Runtime.Domain\RazorSoft.Media.Runtime.Domain.csproj" />
-    </ItemGroup>
-
+    
     <ItemGroup>
         <None Update="Properties\AssemblyInfo.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
             <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
         </None>
     </ItemGroup>
-
+    
     <ItemGroup>
         <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
     </ItemGroup>
-
+    
     <ItemGroup>
         <Compile Update="Properties\AssemblyInfo.cs">
             <DesignTime>True</DesignTime>
@@ -63,7 +69,6 @@
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
+        <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
     </Target>
-
 </Project>

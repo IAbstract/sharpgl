@@ -1,26 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>disable</Nullable>
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-        <RootNamespace>RazorSoft.Media.Framework</RootNamespace>
-        <PackageReleaseNotes>alpha</PackageReleaseNotes>
-        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="Core\RuntimeBuilder.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="RazorSoft.Core" Version="3.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\.Runtime.Domain\RazorSoft.Media.Runtime.Domain.csproj" />
+      <PackageReference Include="SharpGLX" Version="0.1.11.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -63,7 +50,7 @@
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
+        <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
     </Target>
 
 </Project>

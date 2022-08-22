@@ -11,14 +11,10 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 
 
-[assembly: InternalsVisibleTo("RazorSoft.Media.Runtime")]
-[assembly: InternalsVisibleTo("RazorSoft.Media.Framework")]
-
-[assembly: AssemblyCompanyAttribute("RazorSoft Media, LLC")]
-[assembly: AssemblyConfigurationAttribute("Debug")]
-[assembly: AssemblyCopyrightAttribute("2022 RazorSoft Media, LLC")]
-[assembly: AssemblyProductAttribute("RazorSoft.Media.Runtime.Domain")]
-[assembly: AssemblyTitleAttribute("RazorSoft.Media")]
+//[assembly: AssemblyCompany("RazorSoft Media, LLC")]
+//[assembly: AssemblyCopyright("2022 RazorSoft Media, LLC")]
+[assembly: AssemblyProduct("SharpGLX.Windows")]
+[assembly: AssemblyTitle("SharpGLX.Windows")]
 
 /*
     Version schema:
@@ -40,12 +36,12 @@ using System.Runtime.CompilerServices;
 #endif
 
 <#+
-    static DateTime ProjectRevisionDate = new DateTime(year: 2022, month: 6, day: 28);
-    static DateTime ProjectReleaseDate = new DateTime(year: 2022, month: 5, day: 23);
+    static DateTime ProjectRevisionDate = new DateTime(year: 2022, month: 8, day: 19);
+    static DateTime ProjectReleaseDate = new DateTime(year: 2022, month: 8, day: 21);
 
     int Major = 0;
-    int Minor = 0;
-    int Revision = 1;
+    int Minor = 1;
+    int Revision = 0;
 
     //  calculate variable date components
     int DaysSinceRelease = (int)((DateTime.Now - ProjectReleaseDate).TotalDays);
