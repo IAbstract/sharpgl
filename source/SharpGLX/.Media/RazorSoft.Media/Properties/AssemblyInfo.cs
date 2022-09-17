@@ -26,12 +26,12 @@ using System.Runtime.CompilerServices;
 
 //  this is for the NuGet package ...???
 #if DEBUG
-    [assembly: AssemblyFileVersion("0.1.0.26")]
-    [assembly: AssemblyVersion("0.1.0.26")]
+    [assembly: AssemblyFileVersion("0.2.0.0")]
+    [assembly: AssemblyVersion("0.2.0.0")]
 #elif !DEBUG
-    [assembly: AssemblyFileVersion("0.1.26.26")]
-    [assembly: AssemblyVersion("0.1.26.26")]
-    [assembly: AssemblyInformationalVersion("0.1.26.26")]
+    [assembly: AssemblyFileVersion("0.2.0.0")]
+    [assembly: AssemblyVersion("0.2.0.0")]
+    [assembly: AssemblyInformationalVersion("0.2.0.0")]
     [assembly: ObfuscateAssembly(false)]
 #endif
 
