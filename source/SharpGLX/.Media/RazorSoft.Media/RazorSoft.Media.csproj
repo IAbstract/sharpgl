@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <OutputType>Library</OutputType>
+        <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
+        <IsOSX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</IsOSX>
+        <IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</IsLinux>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(IsWindows)'=='true'">
+        <DefineConstants>Windows</DefineConstants>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(IsOSX)'=='true'">
+        <DefineConstants>OSX</DefineConstants>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(IsLinux)'=='true'">
+        <DefineConstants>Linux</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="glfw" Version="3.3.8" />
+        <PackageReference Include="RazorSoft.Core" Version="3.0.0" />
+        <PackageReference Include="SharpGLX" Version="0.2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Properties\AssemblyInfo.cs">
+            <DependentUpon>AssemblyInfo.tt</DependentUpon>
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Properties\AssemblyInfo.tt">
+            <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+            <Generator>TextTemplatingFileGenerator</Generator>
+        </None>
+        <None Update="Properties\RazorSoft.Media.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>RazorSoft.Media.nuspec</LastGenOutput>
+        </None>
+        <None Update="Properties\RazorSoft.Media.nuspec">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>RazorSoft.Media.tt</DependentUpon>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Docs\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\..\..\dependencies\glfw3.dll" Link="glfw3.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\..\..\dependencies\glu32.dll" Link="glu32.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\..\..\dependencies\glut32.dll" Link="glut32.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\..\..\dependencies\opengl32.dll" Link="opengl32.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\..\..\GLFW_LICENSE.md" Link="Docs\GLFW_LICENSE.md">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <PostBuildEventDependsOn>
+            $(PostBuildEventDependsOn);
+            PostBuildMacros;
+        </PostBuildEventDependsOn>
+        <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+        <Version></Version>
+    </PropertyGroup>
+
+    <Target Name="GetVersion" AfterTargets="PostBuildEvent">
+        <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+            <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
+        </GetAssemblyIdentity>
+        <PropertyGroup>
+            <VersionInfo>%(AssemblyInfo.Version)</VersionInfo>
+        </PropertyGroup>
+        <!-- And use it after like any other variable: -->
+        <Message Text="VersionInfo = $(VersionInfo)" Importance="high" />
+    </Target>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Condition="'$(Configuration)' == 'Debug'" Command="dotnet pack --no-build -p:PackageVersion=$(VersionInfo)" />
+        <Exec Condition="'$(Configuration)' == 'Release'" Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
+    </Target>
+</Project>

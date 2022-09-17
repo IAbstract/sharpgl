@@ -1,7 +1,7 @@
 ﻿// Copyright: ©2022 RazorSoft Media, DBA, Lone Star Logistics & Transport, LLC. All Rights Reserved.
 
 
-namespace RazorSoft.Media.Runtime.Logging {
+namespace RazorSoft.Media.Framework.Logging {
 
     public enum LogLevel {
         Debug = 0,

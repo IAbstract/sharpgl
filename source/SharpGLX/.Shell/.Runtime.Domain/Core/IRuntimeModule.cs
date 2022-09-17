@@ -1,7 +1,7 @@
 ﻿// Copyright: ©2022 RazorSoft Media, DBA, Lone Star Logistics & Transport, LLC. All Rights Reserved.
 
 
-namespace RazorSoft.Media.Runtime {
+namespace RazorSoft.Media.Framework {
 
     /// <summary>
     /// 

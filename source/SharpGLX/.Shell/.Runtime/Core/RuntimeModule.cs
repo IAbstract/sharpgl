@@ -3,10 +3,10 @@
 
 using RazorSoft.Core;
 
-using RazorSoft.Media.Runtime.Logging;
+using RazorSoft.Media.Framework.Logging;
 
 
-namespace RazorSoft.Media.Runtime {
+namespace RazorSoft.Media.Framework {
 
     /// <summary>
     /// 

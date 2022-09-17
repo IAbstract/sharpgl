@@ -4,7 +4,7 @@
 using System.Diagnostics;
 
 
-namespace RazorSoft.Media.Runtime.Logging {
+namespace RazorSoft.Media.Framework.Logging {
 
     /// <summary>
     /// 

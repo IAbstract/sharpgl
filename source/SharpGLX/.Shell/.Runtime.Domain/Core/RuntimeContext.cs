@@ -5,9 +5,9 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-using RazorSoft.Media.Runtime.Logging;
+using RazorSoft.Media.Framework.Logging;
 
-namespace RazorSoft.Media.Runtime {
+namespace RazorSoft.Media.Framework {
     public delegate void WriteLog(string logEntry, LogLevel loggingLevel = LogLevel.Info);
     public delegate void ContextReady();
     public delegate void ContextStarted();

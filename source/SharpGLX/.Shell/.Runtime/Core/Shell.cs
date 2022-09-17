@@ -4,13 +4,11 @@
 using System;
 using System.IO;
 using System.Text;
-using System.Threading;
 using System.Reflection;
-using static System.Diagnostics.Debug;
-
-using RazorSoft.Media.Runtime;
-using RazorSoft.Media.Runtime.Logging;
 using System.Collections.Generic;
+
+using RazorSoft.Media.Framework;
+using RazorSoft.Media.Framework.Logging;
 
 
 /* *** general entry point      *** */
@@ -19,7 +17,7 @@ Shell.Run(args);
 /* *** -----------------------  *** */
 
 
-namespace RazorSoft.Media.Runtime {
+namespace RazorSoft.Media.Framework {
 
     #region         delegates
     public delegate void RuntimeLaunching();
@@ -65,7 +63,7 @@ namespace RazorSoft.Media.Runtime {
                 Directory.CreateDirectory(LOG_PATH);
             }
 
-            var domainDLL = Assembly.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "RazorSoft.Media.Runtime.Domain.dll"));
+            var domainDLL = Assembly.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "RazorSoft.Media.Framework.Domain.dll"));
             DomainVersion = domainDLL.GetName().Version;
         }
         #endregion	constructors & destructors

@@ -10,12 +10,11 @@ using System.Runtime.CompilerServices;
 
 
 [assembly: InternalsVisibleTo("RazorSoft.Media.Runtime")]
-[assembly: InternalsVisibleTo("RazorSoft.Media.Framework")]
 
 [assembly: AssemblyCompanyAttribute("RazorSoft Media, LLC")]
 [assembly: AssemblyConfigurationAttribute("Debug")]
 [assembly: AssemblyCopyrightAttribute("2022 RazorSoft Media, LLC")]
-[assembly: AssemblyProductAttribute("RazorSoft.Media.Runtime.Domain")]
+[assembly: AssemblyProductAttribute("RazorSoft.Media.Framework.Domain")]
 [assembly: AssemblyTitleAttribute("RazorSoft.Media")]
 
 /*
@@ -28,12 +27,12 @@ using System.Runtime.CompilerServices;
 
 //  this is for the NuGet package ...???
 #if DEBUG
-    [assembly: AssemblyFileVersion("0.0.1.53")]
-    [assembly: AssemblyVersion("0.0.1.53")]
+    [assembly: AssemblyFileVersion("0.0.1.61")]
+    [assembly: AssemblyVersion("0.0.1.61")]
 #elif !DEBUG
-    [assembly: AssemblyFileVersion("0.0.53.89")]
-    [assembly: AssemblyVersion("0.0.53.89")]
-    [assembly: AssemblyInformationalVersion("0.0.53.89")]
+    [assembly: AssemblyFileVersion("0.0.61.97")]
+    [assembly: AssemblyVersion("0.0.61.97")]
+    [assembly: AssemblyInformationalVersion("0.0.61.97")]
     [assembly: ObfuscateAssembly(false)]
 #endif
 

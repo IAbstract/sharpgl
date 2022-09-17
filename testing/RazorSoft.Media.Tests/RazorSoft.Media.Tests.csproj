@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UnitTests.Descendent.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
@@ -17,8 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\source\SharpGLX\.Media\RazorSoft.Media\RazorSoft.Media.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="RazorSoft.UnitTesting">
-      <HintPath>..\..\..\..\dependencies\RazorSoft.UnitTesting.dll</HintPath>
+      <HintPath>..\..\dependencies\RazorSoft.UnitTesting.dll</HintPath>
     </Reference>
   </ItemGroup>
 

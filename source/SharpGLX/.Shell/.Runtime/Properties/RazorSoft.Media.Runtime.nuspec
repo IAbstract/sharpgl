@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--    NuGet nuspec file for RazorSoft.Media.Framework -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RazorSoft.Media.Runtime</id>
+    <version>0.3.0.42</version>
+    <title>Media Runtime</title>
+    <authors>David Boarman</authors>
+    <owners>RazorSoft Meida, LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Runtime Shell</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags></tags>
+
+    <dependencies>
+      <dependency id="RazorSoft.Core" version="3.0" />
+    </dependencies>
+  </metadata>
+</package>
+

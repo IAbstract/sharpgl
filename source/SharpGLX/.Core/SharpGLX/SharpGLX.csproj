@@ -64,11 +64,12 @@
         <PropertyGroup>
             <VersionInfo>%(AssemblyInfo.Version)</VersionInfo>
         </PropertyGroup>
-        <!--And use it after like any other variable:-->
+        <!-- And use it after like any other variable: -->
         <Message Text="VersionInfo = $(VersionInfo)" Importance="high" />
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
+        <Exec Condition="'$(Configuration)' == 'Debug'" Command="dotnet pack --no-build -p:PackageVersion=$(VersionInfo)" />
+        <Exec Condition="'$(Configuration)' == 'Release'" Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
     </Target>
 </Project>

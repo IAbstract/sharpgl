@@ -6,7 +6,7 @@ using System.IO;
 using System.Collections.Generic;
 
 
-namespace RazorSoft.Media.Runtime.Logging {
+namespace RazorSoft.Media.Framework.Logging {
 
 
     /// <summary>

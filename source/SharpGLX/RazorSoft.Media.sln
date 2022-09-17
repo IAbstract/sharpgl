@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorSoft.Media", ".Media\RazorSoft.Media\RazorSoft.Media.csproj", "{F4F7D762-DBDE-40B8-A352-2C7FD75059B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Samples", ".Samples", "{BF2A3364-3FCA-40D8-A225-D59CE4C2CBD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Testing", ".Testing", "{1F5042CB-5975-4B51-A553-B2AC5939ED51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorSoft.Media.Tests", "..\..\testing\RazorSoft.Media.Tests\RazorSoft.Media.Tests.csproj", "{3E2CD36A-9A71-4135-BA4F-51266606F164}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4F7D762-DBDE-40B8-A352-2C7FD75059B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F7D762-DBDE-40B8-A352-2C7FD75059B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F7D762-DBDE-40B8-A352-2C7FD75059B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F7D762-DBDE-40B8-A352-2C7FD75059B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2CD36A-9A71-4135-BA4F-51266606F164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2CD36A-9A71-4135-BA4F-51266606F164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2CD36A-9A71-4135-BA4F-51266606F164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2CD36A-9A71-4135-BA4F-51266606F164}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E2CD36A-9A71-4135-BA4F-51266606F164} = {1F5042CB-5975-4B51-A553-B2AC5939ED51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5AB8F68-2D1C-49AF-96EF-0F4B1D92B163}
+	EndGlobalSection
+EndGlobal

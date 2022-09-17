@@ -7,7 +7,6 @@
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
         <RootNamespace>RazorSoft.Media.Framework</RootNamespace>
         <PackageReleaseNotes>alpha</PackageReleaseNotes>
-        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 
@@ -16,17 +15,35 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="RazorSoft.Core" Version="3.0.0" />
+        <PackageReference Include="RazorSoft.Core" Version="3.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\.Runtime.Domain\RazorSoft.Media.Runtime.Domain.csproj" />
+      <ProjectReference Include="..\.Runtime.Domain\RazorSoft.Media.Runtime.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
         <None Update="Properties\AssemblyInfo.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
             <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+        </None>
+        <None Update="Properties\RazorSoft.Media.Framework.nuspec">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>RazorSoft.Media.Framework.tt</DependentUpon>
+        </None>
+        <None Update="Properties\RazorSoft.Media.Framework.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>RazorSoft.Media.Framework.nuspec</LastGenOutput>
+        </None>
+        <None Update="Properties\RazorSoft.Media.Runtime.nuspec">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>RazorSoft.Media.Runtime.tt</DependentUpon>
+        </None>
+        <None Update="Properties\RazorSoft.Media.Runtime.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+          <LastGenOutput>RazorSoft.Media.Runtime.nuspec</LastGenOutput>
         </None>
     </ItemGroup>
 
@@ -63,7 +80,7 @@
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="dotnet pack --no-build -o ~/../../../../../nuget-repo -p:PackageVersion=$(VersionInfo)" />
+      <Exec Command="nuget pack " />
     </Target>
 
 </Project>
